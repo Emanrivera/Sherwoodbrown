@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-archivo), 'Archivo', system-ui, sans-serif;
+  --font-display: var(--font-anton), 'Anton', Impact, sans-serif;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  color-scheme: light;
+  /* paper */
+  --background: oklch(0.955 0.004 250);
+  /* ink */
+  --foreground: oklch(0.16 0.015 260);
+  --card: oklch(0.985 0.002 250);
+  --card-foreground: oklch(0.16 0.015 260);
+  --popover: oklch(0.985 0.002 250);
+  --popover-foreground: oklch(0.16 0.015 260);
+  /* navy */
+  --primary: oklch(0.24 0.05 262);
+  --primary-foreground: oklch(0.975 0.003 250);
+  --secondary: oklch(0.9 0.006 250);
+  --secondary-foreground: oklch(0.16 0.015 260);
+  --muted: oklch(0.9 0.006 250);
+  --muted-foreground: oklch(0.45 0.015 260);
+  /* jersey red */
+  --accent: oklch(0.58 0.2 27);
+  --accent-foreground: oklch(0.985 0.002 250);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.16 0.015 260 / 14%);
+  --input: oklch(0.16 0.015 260 / 20%);
+  --ring: oklch(0.58 0.2 27);
+  --radius: 0.25rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+.hero-photo-fade {
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 65% 35%, #000 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse 85% 70% at 65% 35%, #000 30%, transparent 75%);
+}
+
+@utility torn-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), 96% calc(100% - 4px), 91% calc(100% - 14px), 86% calc(100% - 6px), 80% calc(100% - 16px), 74% calc(100% - 8px), 69% calc(100% - 12px), 63% calc(100% - 3px), 57% calc(100% - 15px), 52% calc(100% - 7px), 46% calc(100% - 13px), 40% calc(100% - 5px), 34% calc(100% - 17px), 29% calc(100% - 9px), 24% calc(100% - 11px), 19% calc(100% - 4px), 14% calc(100% - 14px), 9% calc(100% - 6px), 4% calc(100% - 12px), 0% calc(100% - 8px));
+}
+
+@utility torn-top {
+  clip-path: polygon(0% 10px, 4% 4px, 9% 14px, 14% 6px, 19% 16px, 24% 8px, 29% 12px, 34% 3px, 40% 15px, 46% 7px, 52% 13px, 57% 5px, 63% 17px, 69% 9px, 74% 11px, 80% 4px, 86% 14px, 91% 6px, 96% 12px, 100% 8px, 100% 100%, 0 100%);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+@utility animate-rise {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee, .animate-rise { animation: none; }
+}
