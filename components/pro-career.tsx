@@ -11,7 +11,8 @@ const career = [
   { years: '2022', team: 'Montreal Alliance', league: 'CEBL', country: 'Canada' },
   { years: '2022–23', team: 'CD Póvoa', league: 'Liga Portuguesa', country: 'Portugal' },
   { years: '2023–24', team: 'CSM Focșani', league: 'Liga Națională', country: 'Romania' },
-  { years: '2024–', team: 'Al-Karkh', league: 'Iraqi Premier League', country: 'Iraq' },
+  { years: '2024–25', team: 'Al-Karkh', league: 'Iraqi Premier League', country: 'Iraq' },
+  { years: '2025', team: 'Mineros de Parral', league: 'LBE', country: 'Mexico' },
 ]
 
 export function ProCareer() {
