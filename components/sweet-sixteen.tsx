@@ -1,4 +1,15 @@
 import Image from 'next/image'
+import { FilmCarousel, type Film } from '@/components/film-carousel'
+
+const films: Film[] = [
+  { id: 'v3-6pX6-rY0', title: 'FGCU highlights', label: 'College' },
+  { id: 'dJM1yEi2hKM', title: 'Maine Red Claws', label: 'G League' },
+  { id: 'GNwkZGdd9VU', title: 'Maine Red Claws', label: 'G League' },
+  { id: 'fX65veUN7xo', title: 'Season highlights', label: '2024' },
+  { id: '0fxNkmSJHMU', title: 'Game highlights', label: '2024' },
+  { id: 'J7JkcZib8OY', title: 'Season highlights', label: '2025' },
+  { id: 'DKUDzRHtFnc', title: 'Pro highlights', label: 'Mixtape' },
+]
 
 const games = [
   {
@@ -98,15 +109,8 @@ export function SweetSixteen() {
         </div>
         <div className="lg:col-span-7">
           <h3 className="font-display text-4xl uppercase">Film room</h3>
-          <div className="mt-6 aspect-video overflow-hidden rounded-sm bg-primary">
-            <iframe
-              className="size-full"
-              src="https://www.youtube-nocookie.com/embed/v3-6pX6-rY0"
-              title="Sherwood Brown highlights"
-              loading="lazy"
-              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+          <div className="mt-6">
+            <FilmCarousel films={films} />
           </div>
         </div>
       </div>

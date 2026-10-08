@@ -66,6 +66,12 @@ export function BookingPopup() {
     }
   }, [])
 
+  function openWith(next: Intent) {
+    setIntent(next)
+    setSent(false)
+    setOpen(true)
+  }
+
   function handleOpenChange(next: boolean) {
     setOpen(next)
     sessionStorage.setItem(SEEN_KEY, '1')
@@ -110,14 +116,24 @@ export function BookingPopup() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen(true)}
-        className="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-accent px-5 py-3.5 font-bold uppercase tracking-wider text-accent-foreground shadow-lg shadow-foreground/25 transition-transform hover:-translate-y-0.5"
-      >
-        <CalendarCheck className="size-5" aria-hidden="true" />
-        Book a session
-      </button>
+      <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2">
+        <button
+          type="button"
+          onClick={() => openWith('scout')}
+          className="flex items-center gap-2 rounded-full border-2 border-accent bg-primary px-4 py-2.5 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-lg shadow-foreground/25 transition-transform hover:-translate-y-0.5"
+        >
+          <Binoculars className="size-4" aria-hidden="true" />
+          {"I'm a scout"}
+        </button>
+        <button
+          type="button"
+          onClick={() => openWith('train')}
+          className="flex items-center gap-2 rounded-full bg-accent px-5 py-3.5 font-bold uppercase tracking-wider text-accent-foreground shadow-lg shadow-foreground/25 transition-transform hover:-translate-y-0.5"
+        >
+          <CalendarCheck className="size-5" aria-hidden="true" />
+          Book a session
+        </button>
+      </div>
 
       <Dialog open={open} onOpenChange={handleOpenChange}>
         <DialogContent className="max-h-[calc(100dvh-2rem)] gap-0 overflow-y-auto rounded-sm p-0 sm:max-w-md">
