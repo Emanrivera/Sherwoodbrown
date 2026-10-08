@@ -3,6 +3,7 @@ import { BookingTrigger } from '@/components/booking-trigger'
 const links = [
   { href: '#sweet-16', label: 'Sweet 16' },
   { href: '#pro', label: 'Pro Career' },
+  { href: '#scouts', label: 'Scouts' },
   { href: '#coaching', label: 'Coaching' },
 ]
 
