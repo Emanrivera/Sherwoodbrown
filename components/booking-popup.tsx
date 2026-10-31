@@ -1,10 +1,10 @@
 'use client'
 
 import { useEffect, useState, type FormEvent } from 'react'
-import { Binoculars, CalendarCheck, Check, Dumbbell, MessageCircle } from 'lucide-react'
+import { Binoculars, CalendarCheck, Check, Dumbbell, MessageCircle, Phone } from 'lucide-react'
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog'
 import { InstagramIcon } from '@/components/instagram-icon'
-import { COACH_DM_URL, COACH_HANDLE, OPEN_BOOKING_EVENT } from '@/lib/socials'
+import { COACH_DM_URL, COACH_HANDLE, COACH_PHONE_DISPLAY, COACH_PHONE_HREF, OPEN_BOOKING_EVENT } from '@/lib/socials'
 
 const AUTO_OPEN_DELAY_MS = 12000
 const SEEN_KEY = 'coach-brown-booking-seen'
@@ -299,6 +299,13 @@ export function BookingPopup() {
                     Just message me
                   </a>
                 )}
+                <a
+                  href={COACH_PHONE_HREF}
+                  className="flex items-center justify-center gap-2 text-sm font-bold uppercase tracking-wider text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+                >
+                  <Phone className="size-4" aria-hidden="true" />
+                  Or call {COACH_PHONE_DISPLAY}
+                </a>
               </div>
             </form>
           )}

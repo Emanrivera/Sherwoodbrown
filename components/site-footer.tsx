@@ -6,8 +6,8 @@ export function SiteFooter() {
           Sherwood Brown <span className="text-accent">#25</span>
         </p>
         <nav aria-label="Social" className="flex flex-wrap gap-6 text-sm font-semibold uppercase tracking-widest">
-          <a href="https://www.instagram.com/coachbrown_tpba/" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
-            @coachbrown_tpba
+          <a href="tel:+18505865303" className="hover:text-accent">
+            (850) 586-5303
           </a>
           <a href="https://www.instagram.com/train_underdaradar/" target="_blank" rel="noopener noreferrer" className="hover:text-accent">
             @train_underdaradar
