@@ -1,6 +1,6 @@
 import { BookingTrigger } from '@/components/booking-trigger'
 import { SocialLinks } from '@/components/social-links'
-import { COACH_DM_URL, COACH_HANDLE } from '@/lib/socials'
+import { COACH_PHONE_DISPLAY, COACH_PHONE_HREF } from '@/lib/socials'
 
 const programs = [
   {
@@ -75,12 +75,10 @@ export function Coaching() {
               Check availability
             </BookingTrigger>
             <a
-              href={COACH_DM_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={COACH_PHONE_HREF}
               className="rounded-sm border-2 border-accent-foreground px-8 py-4 text-center font-bold uppercase tracking-wider transition-colors hover:bg-accent-foreground/10"
             >
-              Message @{COACH_HANDLE}
+              Call {COACH_PHONE_DISPLAY}
             </a>
           </div>
         </div>
